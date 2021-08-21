@@ -64,8 +64,12 @@ document.getElementById('promo-btn').addEventListener('click', function(){
         getDiscountedTotal();
         promoInput.value = '';
     }  
+    else if(promoInput.value == ''){
+        alert('Please Input Promo Code');
+    }
     else{
         alert('Wrong Promo Code');
+        promoInput.value = '';
     }
 })
 
