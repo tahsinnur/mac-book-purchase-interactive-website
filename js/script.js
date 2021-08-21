@@ -63,7 +63,6 @@ promoBtn.addEventListener('click', function(){
     if(promoInput.value.toLowerCase() == promoCode.toLowerCase()){
         getDiscountedTotal();
         promoInput.value = '';
-        promoBtn.setAttribute('disabled', true);
     }  
     else if(promoInput.value == ''){
         alert('Please Input Promo Code');
@@ -76,7 +75,7 @@ promoBtn.addEventListener('click', function(){
 
 // discounted total calculation
 function getDiscountedTotal(){
-    const finalTotalValue = parseInt(finalTotal.innerText);
-    const discountValue = finalTotalValue * .20;
-    finalTotal.innerText = finalTotalValue - discountValue;
+    const subTotalValue = parseInt(subTotalPrice.innerText);
+    const discountValue = subTotalValue * .20;
+    finalTotal.innerText = subTotalValue - discountValue;
 }
