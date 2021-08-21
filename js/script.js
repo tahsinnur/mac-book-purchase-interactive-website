@@ -56,13 +56,14 @@ function updateTotal(){
 }
 
 // handler for promo code apply button
-
-document.getElementById('promo-btn').addEventListener('click', function(){
+const promoBtn = document.getElementById('promo-btn');
+promoBtn.addEventListener('click', function(){
     const promoInput = document.getElementById('promo-input');
     const promoCode = 'stevekaku';
     if(promoInput.value.toLowerCase() == promoCode.toLowerCase()){
         getDiscountedTotal();
         promoInput.value = '';
+        promoBtn.setAttribute('disabled', true);
     }  
     else if(promoInput.value == ''){
         alert('Please Input Promo Code');
